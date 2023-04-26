@@ -1,0 +1,44 @@
+create database gobi;
+
+show databases;
+use gobi;
+
+create table persons(
+ roll_no int,
+ Firstname varchar(255),
+ lastname  varchar(255),
+ marks double
+);
+
+desc persons;
+
+insert into persons values(1,"Abhishek","Kulkarni",95.50);
+
+select * from persons;
+insert into persons values(2,"Tanmay","Limje",94.50);
+insert into persons values(3,"Aairaf","Lohar",93.50);
+
+#display the the complete table
+select * from persons;
+
+#display particular columns
+select roll_no,marks from persons;
+
+#delete particular row
+delete from persons where roll_no=1;
+select * from persons;
+
+# for updating the value in the table
+update persons set marks=99.00 where roll_no=2;
+
+# For inserting the new column in the table
+alter table persons add address varchar(255);
+desc persons;
+
+# For deleting the specific column in the table
+alter table persons drop lastname;
+
+# modify datatype of particular column
+alter table persons modify roll_no float;
+
+# for deleting the database we use drop keyword
